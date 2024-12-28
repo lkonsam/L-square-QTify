@@ -1,6 +1,6 @@
 .button{
-    color: #34C94B;
-    background-color: #121212;
+    color: var(--color-primary);
+    background-color: var(--color-black);
 
     font-family: Poppins;
     font-size: 18px;
