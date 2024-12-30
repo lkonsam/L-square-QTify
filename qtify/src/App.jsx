@@ -1,16 +1,18 @@
+import { StyledEngineProvider } from "@mui/system";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home/Home";
+import Navbar from "./components/Navbar/Navbar";
+import { Outlet } from "react-router-dom";
 
 function App() {
+  const { newAlbums=[], topAlbums=[], songs=[], genres=[] } = {};
+
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <>
+    <StyledEngineProvider injectFirst>
+      <Navbar searchData="" />
+      <Outlet context={{ data: { newAlbums, topAlbums, songs, genres } }} />
+    </StyledEngineProvider>
+    </>
   );
 }
 
