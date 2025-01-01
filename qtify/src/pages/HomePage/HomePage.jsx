@@ -8,7 +8,7 @@ export default function HomePage({ props }) {
   const {data} = useOutletContext();
   const { newAlbums, topAlbums, songs, genres } = data;
 
-  console.log(data);
+  // console.log(genres); 
 
   return (
     <>
@@ -16,7 +16,7 @@ export default function HomePage({ props }) {
       <div className={styles.wrapper}>
         <Section title="Top Albums" data={topAlbums} type="album" />
         <Section title="New Albums" data={newAlbums} type="album"  />
-        <Section title="Songs" data={songs} filterSource="" type="song" />
+        <Section title="Songs" data={songs} genres={genres} type="song" />
       </div>
     </>
   );
