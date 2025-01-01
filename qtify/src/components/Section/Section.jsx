@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import styles from "./Section.module.css";
 import { CircularProgress, Stack } from "@mui/material";
 import Carousel from "../Carousel/Carousel";
-import Card from "../Card/Card";
 import Filters from "../Filters/Filters";
+import CardComponent from "../CardComponent/CardComponent";
 
 export default function Section({ title, data, genres, type }) {
   const [filters, setFilters] = useState([]);
@@ -21,10 +21,10 @@ export default function Section({ title, data, genres, type }) {
   }, [genres]);
 
   const showFilters = filters.length > 0;
-  const cardsToRender = data.filter((card) =>
+  const cardsToRender = data.filter((element) =>
     showFilters && selectedFilterIndex !== 0
-      ? card.genre.key === filters[selectedFilterIndex].key
-      : card
+      ? element.genre.key === filters[selectedFilterIndex].key
+      : element
   );
 
   return (
@@ -52,7 +52,7 @@ export default function Section({ title, data, genres, type }) {
             {!collapsed ? (
               <div className={styles.showAllWrapper}>
                 {cardsToRender.map((album) => (
-                  <Card data={album} type={type} key={album.id} />
+                  <CardComponent data={album} type={type} key={album.id} />
                 ))}
               </div>
             ) : (
@@ -60,7 +60,7 @@ export default function Section({ title, data, genres, type }) {
                 <Carousel
                   data={cardsToRender}
                   renderCardComponent={(item) => (
-                    <Card data={item} type={type} />
+                    <CardComponent data={item} type={type} />
                   )}
                 />
               </div>

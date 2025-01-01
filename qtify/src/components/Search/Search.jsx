@@ -82,6 +82,8 @@ function Search({ searchData, placeholder }) {
           </button>
         </div>
       </form>
+
+      
       {groupedOptions.length > 0 ? (
         <Listbox {...getListboxProps()}>
           {groupedOptions.map((option, index) => {
