@@ -1,10 +1,34 @@
+/* Navbar.module.css */
+
 .navbar {
-    background-color: var(--color-primary);
-    height: 74px;
-    width: 100vw;
-    padding: 0px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background-color: var(--color-primary);
+  height: 74px;
+  width: 100vw;
+  padding: 0px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Desktop Search - Default Display */
+.searchDesktop {
+  display: flex;
+}
+
+/* Mobile Search - Hidden by Default */
+.searchMobile {
+  display: none;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 991px) {
+  .searchDesktop {
+      display: none;
   }
-  
+  .searchMobile {
+      display: flex;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+  }
+}

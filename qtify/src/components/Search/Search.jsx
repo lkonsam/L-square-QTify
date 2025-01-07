@@ -60,14 +60,14 @@ function Search({ searchData, placeholder }) {
   };
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative" }} className={styles.mobileBox} >
       <form
         className={styles.wrapper}
         onSubmit={(e) => {
           onSubmit(e, value);
         }}
       >
-        <div {...getRootProps()}>
+        <div {...getRootProps()} className={styles.mobileBox} >
           <input
             name="album"
             className={styles.search}

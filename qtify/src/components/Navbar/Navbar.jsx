@@ -7,18 +7,30 @@ import styles from "./Navbar.module.css";
 
 function Navbar({ searchData }) {
   return (
-    <nav className={styles.navbar}>
-      <Link to="/">
-        <Logo />
-      </Link>
-       <Search
-        placeholder="Search a song of your choice"
-        searchData={searchData}
-      /> 
-      <Button>Give Feedback</Button>
-    </nav>
+    <>
+      {/* Desktop Navbar */}
+      <nav className={styles.navbar}>
+        <Link to="/">
+          <Logo />
+        </Link>
+        <div className={styles.searchDesktop}>
+          <Search
+            placeholder="Search a song of your choice"
+            searchData={searchData}
+          />
+        </div>
+        <Button>Give Feedback</Button>
+      </nav>
+
+      {/* Mobile Search Bar */}
+      <div className={styles.searchMobile}>
+        <Search
+          placeholder="Search a song of your choice"
+          searchData={searchData}
+        />
+      </div>
+    </>
   );
 }
 
 export default Navbar;
-
